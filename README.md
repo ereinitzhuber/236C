@@ -35,7 +35,8 @@ CLK - 25
 
 Create a project in the usual manner for your IDE and add the required libraries. Use the main.cpp file or main.ino depending on IDE and edit these lines
 
-```//YOUR  PORT  HERE
+```
+//YOUR  PORT  HERE
 int port = 5005;
 
 const char* ssid = ""; //YOUR WIFI SSID
@@ -43,7 +44,8 @@ const char* passwd = ""; //YOUR WIFI PASSWORD
 ```
 Add the port you wish the device to run on and your wifi info.
 
-```#define HARDWARE_TYPE MD_MAX72XX::FC16_HW //CHANGE TO YOUR DEVICE TYPE
+```
+#define HARDWARE_TYPE MD_MAX72XX::FC16_HW //CHANGE TO YOUR DEVICE TYPE
 #define MAX_DEVICES 4
 
 #define CLK_PIN   25  //YOUR CLK PIN
@@ -53,29 +55,32 @@ Add the port you wish the device to run on and your wifi info.
 Edit your pin mappings if nessicary and set MAX_DEVICES to however many individual 64 segment led panels you have. Mine has 4 and it seems that most are either 1 or 4, so I left 4 as the default selection.
 Pay special attention to the #define HARDWARE_TYPE line. Some of these MAX7219 boards vary slightly and HARDWARE_TYPE may need to be set diffirently. Check the description and reviews of the version you purchased to find the exact hardware type. Otherwise I'll have a link below explaining more about the types. Trial and error is always an option if you can't find anything, keep trying diffirent types until the "Hello!" message is displayed clearly after uploading.
 
-```//Set brightness of LED matrix 1-15
+```
+//Set brightness of LED matrix 1-15
 P.setIntensity(6);
 ```
 Edit this line to change brightness.
 
 
 Save and upload the program to the ESP32. If successful the board should display "Hello!". 
-Open a serial connection to the ESP32 using speed 57600 and press the en button on thor board. You should see the message "Connecting..." followed by "Connected!". This means your ESP32 has connected to wifi and is ready. The next two lines will be the device's IP and the port you set earlier, make note of these.
+Open a serial connection to the ESP32 using speed 57600 and press the en button on the board. You should see the message "Connecting..." followed by "Connected!". This means your ESP32 has connected to wifi and is ready. The next two lines will be the device's IP and the port you set earlier, make note of these.
 
 That's it for the ESP32 section.
 
 #### Cilent PC Setup
 
-Download and pen the remote.py file in a text editor.
+Download and open the remote.py file in a text editor.
 
-```#Port and IP of ESP32 running server
+```
+#Port and IP of ESP32 running server
 ESP_IP = "" #YOUR ESP32 IP
 ESP_PORT = # YOUR ESP32 PORT
 ```
 Set these to the IP and port you noted earlier from the ESP32.
 
 
-```#Button mappings
+```
+#Button mappings
 A_BUTTON = "BTN_SOUTH"
 B_BUTTON = "BTN_EAST"
 C_BUTTON = "BTN_WEST"
@@ -94,7 +99,8 @@ X_NEUTRAL = 0
 ```
 This is the table of mappings for buttons and joystick directions. You may have to remap your buttons and stick directions in this table. Thankfully the Python Inputs library gives us a nice example that lists of button presses. Here's the code
 
-```"""Simple example showing how to get gamepad events."""
+```
+"""Simple example showing how to get gamepad events."""
 
 from __future__ import print_function
 from inputs import get_gamepad
