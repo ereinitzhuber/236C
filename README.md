@@ -97,7 +97,7 @@ X_LEFT = -1
 X_RIGHT = 1
 X_NEUTRAL = 0
 ```
-This is the table of mappings for buttons and joystick directions. You may have to remap your buttons and stick directions in this table. Thankfully the Python Inputs library gives us a nice example that lists of button presses. Here's the code
+This is the table of mappings for buttons and joystick directions. You may have to remap your buttons and stick directions in this table. Thankfully the Python Inputs library gives us a nice example that lists button presses. Here's the code
 
 ```
 """Simple example showing how to get gamepad events."""
@@ -116,7 +116,7 @@ def main():
 if __name__ == "__main__":
     main()
 ```
-Save this in a seperate file and run it with your fightstick plugged in. From there you will see inputs printed to the terminal and use those to map physical buttons to these constants. event.code (the second wird printed on each line) will be the name of the button. In my case "BTN_SOUTH" is printed when pressing A. The same is true for the stick directions, except up or down, left or right are differentiated by event.state (number, third item printed). In my case when pressing UP I get ABS_HAT0Y -1, down is ABS_HAT0Y 1 and neutral is 0. Rebind your buttons if necessary.
+Save this in a seperate file and run it with your fightstick plugged in. From there you will see inputs printed to the terminal and use those to map physical buttons to these constants. event.code (the second word printed on each line) will be the name of the button. In my case "BTN_SOUTH" is printed when pressing A. The same is true for the stick directions, except up or down, left or right are differentiated by event.state (number, third item printed). In my case when pressing UP I get ABS_HAT0Y -1, down is ABS_HAT0Y 1 and neutral is 0. Rebind your buttons if necessary.
 
 
 ### Finish
